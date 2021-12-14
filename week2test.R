@@ -191,3 +191,41 @@ y[good]
 x<-matrix(1:4,2,2)
 y<-matrix(rep(10,4),2,2)
 x*y
+
+x<-list(2,"a","b",T)
+x[[1]]
+
+x<-1:4
+y<-2
+x+y
+
+#quiz 1
+data<-read.csv("hw1_data.csv")
+data
+data[1:2,]
+data[152:153,]
+data1<-data[47,]
+data1
+
+data2<-data[["Ozone"]]
+data2
+bad<-is.na(data2)
+bad
+data2[bad]
+data3<-data2[!bad]
+data3
+mean(data3)
+
+data4<-data[which(data$Ozone>31&data$Temp>90),]
+data4
+mean(data4[[2]])
+
+data5<-data[ which(data$Month==6),]
+data5
+mean(data5[["Temp"]])
+
+data6<-data[ which(data$Month==5),]
+data6
+data7<-data6[["Ozone"]]
+max(data7,na.rm=TRUE)
+
